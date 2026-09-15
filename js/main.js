@@ -67,6 +67,73 @@
     });
   }
 
+  /* ---------- Active section underline ---------- */
+
+  /* About and Contact point at sections of the home page, so they could never
+     pick up .is-active, which is hardcoded in the markup. On the home page,
+     turn them into in-page links and let the underline follow whichever
+     section is currently under the header. */
+
+  var heroSection = document.querySelector('.hero');
+
+  if (nav && heroSection) {
+    var linkTo = function (suffix) {
+      return nav.querySelector('.nav-link[href="index.html' + suffix + '"]');
+    };
+
+    var homeLink    = linkTo('');
+    var aboutLink   = linkTo('#about');
+    var contactLink = linkTo('#contact');
+
+    var spy = [];
+    var watch = function (el, link) { if (el && link) spy.push({ el: el, link: link }); };
+
+    watch(heroSection, homeLink);
+    watch(document.getElementById('work'), homeLink);
+    watch(document.getElementById('about'), aboutLink);
+    watch(document.getElementById('contact'), contactLink);
+
+    // Already on this page: drop the filename so these scroll instead of
+    // reloading (the site is served from "/", so "index.html#about" is a
+    // different URL and would cost a full page load).
+    if (aboutLink)   aboutLink.setAttribute('href', '#about');
+    if (contactLink) contactLink.setAttribute('href', '#contact');
+
+    var headerH = parseInt(getComputedStyle(root).getPropertyValue('--header-h'), 10) || 68;
+    var queued = false;
+
+    var updateActiveNav = function () {
+      queued = false;
+      if (!spy.length) return;
+
+      var mark = window.scrollY + headerH + 24;
+      var current = spy[0];
+
+      spy.forEach(function (s) {
+        if (s.el.getBoundingClientRect().top + window.scrollY <= mark) current = s;
+      });
+
+      // Pin the last section once the page cannot scroll any further, so
+      // Contact still lights up even when it is too short to reach the mark.
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+        current = spy[spy.length - 1];
+      }
+
+      nav.querySelectorAll('.nav-link').forEach(function (a) {
+        a.classList.toggle('is-active', a === current.link);
+      });
+    };
+
+    window.addEventListener('scroll', function () {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(updateActiveNav);
+    }, { passive: true });
+
+    window.addEventListener('resize', updateActiveNav);
+    updateActiveNav();
+  }
+
   /* ---------- Scroll reveal ---------- */
 
   var revealables = document.querySelectorAll('.reveal');
