@@ -91,6 +91,7 @@ that file exists, a placeholder is shown.
 | All other colours | The `:root` blocks at the top of `css/style.css` |
 | Bio, skills, education | Directly in [`index.html`](index.html) |
 | Page width | `--wrap` in `css/style.css` |
+| Header logo | Inlined SVG in the `.brand` link of `index.html` and `projects.html`; sized by `.brand-logo` in `css/style.css`. Source copy at `assets/img/logo.svg`. |
 
 Dark and light themes follow the visitor's system setting, and the toggle in the
 header overrides it. The choice is remembered in `localStorage`.

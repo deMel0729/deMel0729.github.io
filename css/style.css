@@ -177,19 +177,17 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round
 
 .brand { display: flex; align-items: center; }
 
-/* Wordmark set in the site's own webfont rather than an image file: stays
-   sharp at every size, follows the light/dark theme, costs no extra request,
-   and is real text for screen readers and search engines. */
-.brand-wordmark {
-  font-size: .8rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: .13em;
+/* Wordmark traced from Arial Black into real paths, so it needs no font on
+   the visitor's machine. Inlined rather than linked as an <img> because only
+   inline SVG can inherit currentColor and follow the theme. */
+.brand-logo {
+  display: block;
+  height: 14px;
+  width: auto;
   color: var(--accent);
-  white-space: nowrap;
   transition: opacity .2s var(--ease);
 }
-.brand:hover .brand-wordmark { opacity: .68; }
+.brand:hover .brand-logo { opacity: .68; }
 
 .nav { display: flex; align-items: center; gap: 4px; }
 
