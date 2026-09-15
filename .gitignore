@@ -1,0 +1,11 @@
+# OS / editor noise
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Local tooling
+.claude/

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Screenshot placeholder">
+  <rect width="1200" height="750" fill="#ececeA"/>
+  <g stroke="#c2c2bb" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="510" y="318" width="180" height="128" rx="10"/>
+    <path d="M510 410l46-42 40 36 52-52 42 38"/>
+    <circle cx="566" cy="356" r="13"/>
+  </g>
+  <text x="600" y="502" text-anchor="middle"
+        font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        font-size="22" letter-spacing="2" fill="#a3a39b">ADD A SCREENSHOT</text>
+</svg>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malan de Mel — Computer Science Undergraduate</title>
+<meta name="description" content="Malan de Mel — Computer Science undergraduate building full stack web applications with C#, .NET, JavaScript and Python.">
+<meta name="author" content="Malan de Mel">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Malan de Mel — Computer Science Undergraduate">
+<meta property="og:description" content="Computer Science undergraduate building full-stack web applications.">
+<meta property="og:url" content="https://demel0729.github.io/">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  /* Apply the saved theme before first paint so there is no colour flash. */
+  try {
+    var saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">MdM</span>
+      <span class="brand-name">Malan de Mel</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html" class="nav-link is-active">Home</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch colour theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M21.5 12h-2.6M5.1 12H2.5M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8M18.7 18.7l-1.8-1.8M7.1 7.1L5.3 5.3"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ─────────────── HERO ─────────────── -->
+  <section class="hero wrap">
+    <div class="hero-text reveal">
+      <p class="eyebrow">Colombo, Sri Lanka &nbsp;·&nbsp; Open to internships</p>
+      <h1 class="hero-title">Malan<br>de Mel</h1>
+      <p class="hero-role">Computer Science Undergraduate</p>
+      <p class="hero-blurb">
+        Computer Science undergraduate who has completed the second year of study, 
+        seeking to gain practical industry experience, apply technical knowledge, 
+        and contribute to innovative projects.
+
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="projects.html">View projects <span aria-hidden="true">&rarr;</span></a>
+        <a class="btn btn-ghost" href="#contact">Get in touch</a>
+      </div>
+      <ul class="hero-links">
+        <li><a href="https://github.com/deMel0729" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/malan-de-mel-802544389/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:malandemel00@gmail.com">Email</a></li>
+      </ul>
+    </div>
+
+    <div class="hero-photo reveal">
+      <div class="photo-frame">
+        <img src="assets/img/profile.jpg" alt="Portrait of Malan de Mel"
+             onerror="this.onerror=null;this.src='assets/img/profile-placeholder.svg';">
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── SELECTED WORK ─────────────── -->
+  <section class="section wrap" id="work">
+    <div class="section-head reveal">
+      <span class="section-num mono">01</span>
+      <h2 class="section-title">Selected work</h2>
+      <a class="section-link" href="projects.html">All projects <span aria-hidden="true">&rarr;</span></a>
+    </div>
+    <div class="featured-grid" id="featuredGrid"></div>
+  </section>
+
+  <!-- ─────────────── ABOUT ─────────────── -->
+  <section class="section wrap" id="about">
+    <div class="section-head reveal">
+      <span class="section-num mono">02</span>
+      <h2 class="section-title">About</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p>
+          I'm a Computer Science undergraduate. Most of what I know came from building things
+          end to end deciding the schema, writing the API, then working out why the front
+          end is sending a string where the back end wanted an integer.
+        </p>
+        <p>
+          My recent work has been full-stack: a C#/.NET REST API paired with a JavaScript
+          client. Before that, smaller self contained projects a library management system,
+          a wellness site, a Python arcade game built with a friend each one teaching a
+          different part of the stack.
+        </p>
+        <p>
+          Right now I'm looking for an internship or junior role where I can work alongside
+          engineers who are better than me and ship something real.
+        </p>
+      </div>
+
+      <aside class="about-side reveal">
+        <h3 class="side-title mono">Education</h3>
+        <div class="edu">
+          <p class="edu-degree">BSc (Hons) Computer Science</p>
+          <p class="edu-school">A.P.I.I.T University</p>
+          <p class="edu-dates mono">2025 &mdash; present</p>
+        </div>
+      </aside>
+    </div>
+
+    <div class="skills reveal">
+      <div class="skill-group">
+        <h3 class="side-title mono">Languages</h3>
+        <ul class="tags">
+          <li class="tag">C#</li><li class="tag">JavaScript</li><li class="tag">Python</li>
+          <li class="tag">SQL</li><li class="tag">HTML</li><li class="tag">CSS</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3 class="side-title mono">Frameworks &amp; libraries</h3>
+        <ul class="tags">
+          <li class="tag">.NET / ASP.NET Core</li><li class="tag">Entity Framework</li>
+          <li class="tag">React</li><li class="tag">Node.js</li><li class="tag">Pygame</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3 class="side-title mono">Tools</h3>
+        <ul class="tags">
+          <li class="tag">Git &amp; GitHub</li><li class="tag">Visual Studio</li>
+          <li class="tag">VS Code</li><li class="tag">Postman</li><li class="tag">SQL Server</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─────────────── CONTACT ─────────────── -->
+  <section class="section wrap" id="contact">
+    <div class="section-head reveal">
+      <span class="section-num mono">03</span>
+      <h2 class="section-title">Contact</h2>
+    </div>
+
+    <div class="contact reveal">
+      <p class="contact-lead">
+        Open to internships, junior roles and interesting side projects.
+        The fastest way to reach me is email.
+      </p>
+      <ul class="contact-list">
+        <li>
+          <span class="contact-label mono">Email</span>
+          <a class="contact-value" href="mailto:malandemel00@gmail.com">malandemel00@gmail.com</a>
+        </li>
+        <li>
+          <span class="contact-label mono">LinkedIn</span>
+          <a class="contact-value" href="https://www.linkedin.com/in/malan-de-mel-802544389/" target="_blank" rel="noopener">malan-de-mel</a>
+        </li>
+        <li>
+          <span class="contact-label mono">GitHub</span>
+          <a class="contact-value" href="https://github.com/deMel0729" target="_blank" rel="noopener">deMel0729</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="mono">&copy; <span id="year">2026</span> Malan de Mel</p>
+    <p class="mono footer-built">Built from scratch &mdash; HTML, CSS, JavaScript</p>
+  </div>
+</footer>
+
+<script src="js/projects-data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

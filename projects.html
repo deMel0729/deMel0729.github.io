@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Malan de Mel</title>
+<meta name="description" content="Projects by Malan de Mel — full-stack web applications, C#/.NET APIs, JavaScript clients and Python games.">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Projects — Malan de Mel">
+<meta property="og:description" content="Full-stack web applications, C#/.NET APIs and Python games.">
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<script>
+  try {
+    var saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.setAttribute('data-theme', saved);
+  } catch (e) {}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">MdM</span>
+      <span class="brand-name">Malan de Mel</span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="projects.html" class="nav-link is-active">Projects</a>
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="index.html#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch colour theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M21.5 12h-2.6M5.1 12H2.5M18.7 5.3l-1.8 1.8M7.1 16.9l-1.8 1.8M18.7 18.7l-1.8-1.8M7.1 7.1L5.3 5.3"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-head wrap">
+    <p class="eyebrow reveal">Work</p>
+    <h1 class="page-title reveal">Projects</h1>
+    <p class="page-lead reveal">
+      Things I have designed, built and broken. Each card opens a closer look — screenshots,
+      a walkthrough video where there is one, and a link straight to the source.
+    </p>
+  </section>
+
+  <section class="wrap filter-bar-wrap">
+    <div class="filter-bar reveal" id="filterBar" role="group" aria-label="Filter projects by technology"></div>
+  </section>
+
+  <section class="wrap projects-section">
+    <div class="projects-grid" id="projectsGrid"></div>
+    <p class="empty-state" id="emptyState" hidden>No projects match that filter.</p>
+  </section>
+
+</main>
+
+<!-- ─────────────── PROJECT DETAIL MODAL ─────────────── -->
+<div class="modal" id="projectModal" hidden>
+  <div class="modal-backdrop" data-close-modal></div>
+
+  <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="modal-close" type="button" aria-label="Close" data-close-modal>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+
+    <div class="modal-scroll" id="modalScroll">
+
+      <div class="modal-media">
+        <div class="media-stage" id="mediaStage"></div>
+        <div class="media-thumbs" id="mediaThumbs"></div>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-meta mono" id="modalMeta"></p>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <div class="modal-desc" id="modalDesc"></div>
+
+        <div class="modal-block" id="modalHighlightsBlock">
+          <h3 class="side-title mono">What it does</h3>
+          <ul class="highlights" id="modalHighlights"></ul>
+        </div>
+
+        <div class="modal-block">
+          <h3 class="side-title mono">Built with</h3>
+          <ul class="tags" id="modalTags"></ul>
+        </div>
+
+        <div class="modal-actions" id="modalActions"></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="mono">&copy; <span id="year">2026</span> Malan de Mel</p>
+    <p class="mono footer-built">Built from scratch &mdash; HTML, CSS, JavaScript</p>
+  </div>
+</footer>
+
+<script src="js/projects-data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/projects.js"></script>
+</body>
+</html>
