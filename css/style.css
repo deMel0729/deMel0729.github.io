@@ -177,17 +177,14 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round
 
 .brand { display: flex; align-items: center; }
 
-/* Wordmark traced from Arial Black into real paths, so it needs no font on
-   the visitor's machine. Inlined rather than linked as an <img> because only
-   inline SVG can inherit currentColor and follow the theme. */
-.brand-logo {
-  display: block;
-  height: 14px;
-  width: auto;
-  color: var(--accent);
-  transition: opacity .2s var(--ease);
+.brand-name {
+  font-weight: 600;
+  font-size: .95rem;
+  letter-spacing: -.01em;
+  white-space: nowrap;
+  transition: color .2s var(--ease);
 }
-.brand:hover .brand-logo { opacity: .68; }
+.brand:hover .brand-name { color: var(--accent); }
 
 .nav { display: flex; align-items: center; gap: 4px; }
 
