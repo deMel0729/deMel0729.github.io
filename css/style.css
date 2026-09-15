@@ -175,24 +175,21 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round
   gap: 16px;
 }
 
-.brand { display: flex; align-items: center; gap: 10px; }
+.brand { display: flex; align-items: center; }
 
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 30px;
-  height: 30px;
-  border: 1px solid var(--border-firm);
-  border-radius: 8px;
-  font-family: var(--font-mono);
-  font-size: .62rem;
-  letter-spacing: .02em;
-  color: var(--muted);
-  transition: border-color .2s var(--ease), color .2s var(--ease);
+/* Wordmark set in the site's own webfont rather than an image file: stays
+   sharp at every size, follows the light/dark theme, costs no extra request,
+   and is real text for screen readers and search engines. */
+.brand-wordmark {
+  font-size: .8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  color: var(--accent);
+  white-space: nowrap;
+  transition: opacity .2s var(--ease);
 }
-.brand:hover .brand-mark { border-color: var(--accent); color: var(--accent); }
-
-.brand-name { font-weight: 600; font-size: .95rem; letter-spacing: -.01em; }
+.brand:hover .brand-wordmark { opacity: .68; }
 
 .nav { display: flex; align-items: center; gap: 4px; }
 
@@ -846,5 +843,4 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round
 @media (max-width: 420px) {
   .hero-cta { flex-direction: column; align-items: stretch; }
   .hero-cta .btn { justify-content: center; }
-  .brand-name { display: none; }
 }
