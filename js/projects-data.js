@@ -119,9 +119,11 @@ const PROJECTS = [
     thumb: "assets/img/projects/space-invaders-cover.jpg",
 
     media: [
-      { type: "image", src: "assets/img/projects/space-invaders-1.jpg", alt: "Space Invaders gameplay" }
-      // Gameplay footage is the single best thing you can add here:
-      // { type: "video", src: "assets/video/space-invaders.mp4", poster: "assets/img/projects/space-invaders-1.jpg" }
+      { type: "video",
+        src: "assets/video/space-invaders-demo.mp4",
+        poster: "assets/img/projects/space-invaders-cover.jpg" }
+      // Add screenshots alongside the clip whenever you like:
+      // { type: "image", src: "assets/img/projects/space-invaders-1.jpg", alt: "Wave 3" }
     ],
 
     links: [
