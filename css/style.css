@@ -175,17 +175,6 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round
   gap: 16px;
 }
 
-.brand { display: flex; align-items: center; }
-
-.brand-name {
-  font-weight: 600;
-  font-size: .95rem;
-  letter-spacing: -.01em;
-  white-space: nowrap;
-  transition: color .2s var(--ease);
-}
-.brand:hover .brand-name { color: var(--accent); }
-
 .nav { display: flex; align-items: center; gap: 4px; }
 
 .nav-link {
@@ -208,7 +197,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round
   background: var(--accent);
 }
 
-.header-actions { display: flex; align-items: center; gap: 6px; }
+.header-actions { display: flex; align-items: center; gap: 6px; margin-left: auto; }
 
 .icon-btn {
   display: grid;
