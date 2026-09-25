@@ -121,9 +121,13 @@ const PROJECTS = [
     media: [
       { type: "video",
         src: "assets/video/space-invaders-demo.mp4",
-        poster: "assets/img/projects/space-invaders-cover.jpg" }
-      // Add screenshots alongside the clip whenever you like:
-      // { type: "image", src: "assets/img/projects/space-invaders-1.jpg", alt: "Wave 3" }
+        poster: "assets/img/projects/space-invaders-cover.jpg" },
+      { type: "image", src: "assets/img/projects/space-invaders-1.jpg",
+        alt: "Opening wave, score 20, health bar full" },
+      { type: "image", src: "assets/img/projects/space-invaders-2.jpg",
+        alt: "Mid-run, score 80, health bar half depleted" },
+      { type: "image", src: "assets/img/projects/space-invaders-3.jpg",
+        alt: "Late run, score 140, health bar almost empty" }
     ],
 
     links: [
