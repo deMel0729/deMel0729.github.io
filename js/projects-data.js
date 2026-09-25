@@ -39,42 +39,67 @@ const PROJECTS = [
 
   {
     id: "altrium",
-    title: "Altrium",
+    title: "Altrium CRM",
     year: "2026",
     role: "Full-stack",
     featured: true,
 
     summary:
-      "A full-stack web application with a C#/.NET REST API and a JavaScript " +
-      "front end, built as two separate services that talk over HTTP.",
+      "A CRM for a small sales team: companies, contacts, leads that convert " +
+      "into deals, a drag-and-drop pipeline and follow-ups that chase you when " +
+      "they fall overdue.",
 
     description: [
-      "Altrium is split into two repositories: a C#/.NET back end that owns the " +
-      "database and exposes a REST API, and a JavaScript front end that consumes it. " +
-      "Keeping them separate meant designing a real API contract rather than letting " +
-      "the two halves reach into each other.",
+      "Altrium is a customer relationship manager built as two separate services: " +
+      "a C#/.NET REST API that owns the database, and a JavaScript front end that " +
+      "consumes it. Keeping them apart meant designing a real API contract rather " +
+      "than letting the two halves reach into each other.",
 
-      "TODO — replace this paragraph with the real story: what problem Altrium solves, " +
-      "who it is for, and the one technical decision you are most pleased with."
+      "It covers the full path a sale actually takes. A lead arrives and gets " +
+      "triaged as new, contacted, qualified or lost. Qualifying it converts it " +
+      "into a contact and a deal, and the deal then moves across a five stage " +
+      "pipeline board until it is won or lost. A dashboard sits on top of all of " +
+      "it, totalling open pipeline value, win rate and anything overdue.",
+
+      "Accounts are provisioned, not self served. There is no sign-up page: a " +
+      "leadership user creates accounts and resets passwords, and roles are set " +
+      "centrally rather than chosen by the person signing in.",
+
+      "Deleting is reversible. Records move to a Recently deleted view that keeps " +
+      "their type, owner and deletion time, and restoring one puts it back where " +
+      "it was instead of creating a fresh copy."
     ],
 
     highlights: [
-      "REST API built with C# and ASP.NET Core",
-      "Separate JavaScript front end consuming the API",
-      "Relational data model with Entity Framework",
-      "TODO — add two or three more specific features"
+      "Deal pipeline as a drag-and-drop board across five stages, with live per-stage counts and values",
+      "Leads convert straight through into a contact and a deal",
+      "Dashboard totalling open pipeline, win rate, lead funnel and overdue follow-ups",
+      "Soft delete with a restore queue, so nothing is destroyed outright",
+      "Accounts provisioned by a leadership role, with passwords reset centrally",
+      "Search plus owner, company and type filters on every list"
     ],
 
-    tech: ["C#", "ASP.NET Core", "JavaScript", "Entity Framework", "SQL", "REST API"],
+    tech: ["C#", "ASP.NET Core", "JavaScript", "REST API", "SQL"],
 
     thumb: "assets/img/projects/altrium-cover.jpg",
 
     media: [
-      { type: "image", src: "assets/img/projects/altrium-1.jpg", alt: "Altrium dashboard" },
-      { type: "image", src: "assets/img/projects/altrium-2.jpg", alt: "Altrium detail view" }
-      // Add a walkthrough when you record one:
-      // { type: "video", src: "assets/video/altrium-demo.mp4", poster: "assets/img/projects/altrium-1.jpg" }
-      // { type: "youtube", id: "PASTE_VIDEO_ID", title: "Altrium walkthrough" }
+      { type: "image", src: "assets/img/projects/altrium-dashboard.jpg",
+        alt: "Dashboard showing open pipeline, win rate, pipeline by stage and overdue follow-ups" },
+      { type: "image", src: "assets/img/projects/altrium-deals.jpg",
+        alt: "Deals board with drag-and-drop cards across Prospecting, Proposal, Negotiation, Won and Lost" },
+      { type: "image", src: "assets/img/projects/altrium-leads.jpg",
+        alt: "Leads list with status pills and a convert action on each row" },
+      { type: "image", src: "assets/img/projects/altrium-companies.jpg",
+        alt: "Companies list showing industry, website, phone and owner" },
+      { type: "image", src: "assets/img/projects/altrium-contacts.jpg",
+        alt: "Contacts list grouped by company" },
+      { type: "image", src: "assets/img/projects/altrium-deleted.jpg",
+        alt: "Recently deleted view with each record's type, owner, deletion time and a restore action" },
+      { type: "image", src: "assets/img/projects/altrium-account.jpg",
+        alt: "Account settings dialog with profile details and a change password form" },
+      { type: "image", src: "assets/img/projects/altrium-signin.jpg",
+        alt: "Sign in screen, with accounts provisioned by a leadership user" }
     ],
 
     links: [
@@ -103,15 +128,13 @@ const PROJECTS = [
       "think about splitting work across a shared repository instead of committing " +
       "straight to main.",
 
-      "TODO — say who did what, and mention anything tricky you solved (frame timing, " +
-      "collision bugs, difficulty scaling)."
     ],
 
     highlights: [
       "Game loop, input handling and rendering written from scratch",
       "Sprite-based collision detection",
       "Progressive enemy waves",
-      "TODO — add scoring, sound, or whatever else it has"
+      "Live score counter and a depleting health bar"
     ],
 
     tech: ["Python", "Pygame", "Game Loop"],
