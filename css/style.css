@@ -674,16 +674,18 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round
   background: var(--surface-2);
   border-bottom: 1px solid var(--border);
 }
+/* contain, not cover: UI screenshots are wider than the 16:9 stage, and
+   cropping them cuts the edges off the interface. Letterboxing onto the
+   surface colour keeps the whole screen visible. */
 .media-stage img,
 .media-stage video,
 .media-stage iframe {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border: 0;
   display: block;
 }
-.media-stage video { object-fit: contain; background: #000; }
 
 .media-thumbs {
   display: flex;
